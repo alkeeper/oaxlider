@@ -1,0 +1,34 @@
+{
+	"name": "oaxlider",
+	"version": "0.2.0",
+	"private": false,
+	"description": "An ultra-light jQuery plugin that slides your photos.",
+	"main": "src/jquery.oaxlider.js",
+	"scripts": {
+		"test": "grunt test",
+		"build": "grunt"
+	},
+	"directories": {
+		"example": "demo"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/alkeeper/oaxlider.git"
+	},
+	"keywords": [
+		"slider",
+		"jquery",
+		"jquery-plugin"
+	],
+	"author": "Alexander Alexandrov",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/alkeeper/oaxlider/issues"
+	},
+	"devDependencies": {
+		"grunt": "0.4.x",
+		"grunt-blanket-mocha": "^0.4.0",
+		"grunt-cli": "^0.1.13",
+		"grunt-contrib-uglify": "0.2.x"
+	}
+}
