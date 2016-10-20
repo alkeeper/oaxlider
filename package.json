@@ -26,9 +26,6 @@
 		"url": "https://github.com/alkeeper/oaxlider/issues"
 	},
 	"devDependencies": {
-		"grunt": "0.4.x",
-		"grunt-blanket-mocha": "^0.4.0",
-		"grunt-cli": "^0.1.13",
-		"grunt-contrib-uglify": "0.2.x"
+
 	}
 }
