@@ -7,9 +7,9 @@ Oak slider js
 ```html
 <div id="myslides">
 	<ul>
-		<li><img src="" alt=""></li>
-		<li><img src="" alt=""></li>
-		<li><img src="" alt=""></li>
+		<li><img src="path/to/img/1.jpg" alt=""></li>
+		<li><img src="path/to/img/2.jpg" alt=""></li>
+		<li><img src="path/to/img/3.jpg" alt=""></li>
 		...
 	</ul>
 </div>
