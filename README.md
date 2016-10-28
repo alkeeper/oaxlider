@@ -25,7 +25,7 @@ $(function(){
 });
 ```
 
-- Advansed usage
+### Advansed usage
 
 ```javascript
 	$("#myslides").oaxlider({
