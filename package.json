@@ -4,10 +4,7 @@
 	"private": false,
 	"description": "An ultra-light jQuery plugin that slides your photos.",
 	"main": "src/jquery.oaxlider.js",
-	"scripts": {
-		"test": "grunt test",
-		"build": "grunt"
-	},
+	"scripts": {},
 	"directories": {
 		"example": "demo"
 	},
