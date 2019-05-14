@@ -29,12 +29,12 @@ $(function(){
 
 ```javascript
 	$("#myslides").oaxlider({
-		"auto" : true,			// sliding autostart
-		"controls" : bool,		// show buttons
+		"auto" : true,			// boolean, sliding autostart
+		"controls" : true,		// boolean, show buttons
 		"delay" : 5, 			// float, seconds
 		"easing" : "linear",	// string, available values — linear, swing
 		"height" : 300,			// int, px
 		"speed" : 1,			// float, seconds // 0.555 -> 555 milliseconds
-		"width" : "100%"		// int (400px) or string (100%)
+		"width" : "100%"		// mixed, int (400px) or string (100%)
 	});
 ```
