@@ -50,7 +50,7 @@
 		const wrapper	= $(`<div id="oaxlider-wrapper"></div>`);
 		const list		= $(this).find("ul");
 		const slides	= list.find("li");
-		const controlsRequired = params.controls && slides.length > 0;
+		const controlsRequired = params.controls && slides.length > 1;
 		const controls	= controlsRequired ? $(`<div id="oaxlider-controls"></div>`) : null;
 		const slidebox = {
 			// width	: $(this).width(),
