@@ -34,9 +34,8 @@
 
 		/**	W, C, U, L, S */
 
-
 		const inttpl = /^[0-9]+$/gi;
-        const params = {...defaults, ...options};
+		const params = {...defaults, ...options};
 
 		if(inttpl.test(params.width)){
 			params.width += 'px';
@@ -48,33 +47,34 @@
 
 		$(this).css("width", params.width);
 		
-		const wrapper	= $("<div id=\"oaxlider-wrapper\"></div>");
-		const controls	= params.controls ? $("<div id=\"oaxlider-controls\"></div>") : null;
+		const wrapper	= $(`<div id="oaxlider-wrapper"></div>`);
 		const list		= $(this).find("ul");
 		const slides	= list.find("li");
+		const controlsRequired = params.controls && slides.length > 0;
+		const controls	= controlsRequired ? $(`<div id="oaxlider-controls"></div>`) : null;
 		const slidebox = {
 			// width	: $(this).width(),
 			count	: slides.length,
 			height	: params.height
 		};
-        
+
 		let i = 1,
-            s = 1,
+			s = 1,
 			zI = 1;
 
 		slides.each(function(){
 			$(this).attr("id", "slide-" + i);
-			if(params.controls){
+			if(controlsRequired){
 				controls.append($("<a id=\"ctrl-" + i + "\" href=\"javascript:void(0)\">" + i + "</a>"));
 			}
 			i++;
 		});
-		
-		if(params.controls){
+
+		if(controlsRequired){
 			controls.find('a:first-child').addClass('slide-active');
 			wrapper.append(controls);
 		}
-		
+
 		wrapper.css({height:slidebox.height});
 		wrapper.append(list);
 		
@@ -93,7 +93,7 @@
 
 		const slideUp = function(id, onclick){
 
-            let stop = false;
+			let stop = false;
 
 			const li = list.find("li:first");
 
@@ -109,7 +109,7 @@
 				if(!onclick){
 					s+=1;
 				}
-				if(params.controls){
+				if(controlsRequired){
 					if(controls.find("a").hasClass("slide-active")){
 						controls.find("a").removeClass("slide-active");
 					}
@@ -136,18 +136,18 @@
 				break;
 				case "fade":
 				default:
-					$("li#slide-"+p).css("opacity", 0).insertAfter("#oaxlider-wrapper ul li:last");
-					$("li#slide-"+p).animate({"opacity": 1}, fast ? 1 : params.speed * 1000, params.easing, () => s = parseInt(p) + 1);
+					$(`li#slide-${p}`).css("opacity", 0).insertAfter("#oaxlider-wrapper ul li:last");
+					$(`li#slide-${p}`).animate({"opacity": 1}, fast ? 1 : params.speed * 1000, params.easing, () => s = parseInt(p) + 1);
 				break;
 			}
 
-			if(params.controls){
+			if(controlsRequired){
 				controls.find("a").removeClass("slide-active");
-				$("#ctrl-"+p).addClass("slide-active");
+				$(`#ctrl-${p}`).addClass("slide-active");
 			}
 		};
 
-		if(params.controls){
+		if(controlsRequired){
 
 			controls.find("a").each(function(){
 
@@ -161,10 +161,10 @@
 
 		}
 
-        const auto = () => {
-            change ( s );
-            timeout_inst = window.setTimeout(auto, params.delay * 1000);
-        };
+		const auto = () => {
+			change ( s );
+			timeout_inst = window.setTimeout(auto, params.delay * 1000);
+		};
 
 		if(params.auto){
 			s += 1;

@@ -25,5 +25,14 @@
 	"bugs": {
 		"url": "https://github.com/alkeeper/oaxlider/issues"
 	},
-	"devDependencies": {}
+	"devDependencies": {},
+	"dependencies": {
+		"grunt": "^1.0.4",
+		"grunt-contrib-concat": "^1.0.1",
+		"grunt-contrib-cssmin": "^3.0.0",
+		"grunt-contrib-uglify-es": "^3.3.0",
+		"grunt-contrib-watch": "^1.1.0",
+		"grunt-daemon": "^0.1.1",
+		"grunt-remove-logging": "^0.2.0"
+	}
 }
