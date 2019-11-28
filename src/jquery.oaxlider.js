@@ -32,8 +32,6 @@
 
 	$.fn.oaxlider = function(options = {}){
 
-		/**	W, C, U, L, S */
-
 		const inttpl = /^[0-9]+$/gi;
 		const params = {...defaults, ...options};
 
