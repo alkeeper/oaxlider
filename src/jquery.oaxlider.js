@@ -164,7 +164,7 @@
 			timeout_inst = window.setTimeout(auto, params.delay * 1000);
 		};
 
-		if(params.auto){
+		if(params.auto && slides.length > 1){
 			s += 1;
 			timeout_inst = window.setTimeout(auto, params.delay * 1000);
 		}
