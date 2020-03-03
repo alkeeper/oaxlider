@@ -1,37 +1,12 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
- 
-		// jshint: {
-		// 	options: {
-		// 		curly: true,
-		// 		eqeqeq: true,
-		// 		immed: true,
-		// 		latedef: true,
-		// 		newcap: true,
-		// 		noarg: true,
-		// 		sub: true,
-		// 		undef: true,
-		// 		eqnull: true,
-		// 		browser: true,
-		// 		globals: {
-		// 			jQuery: true,
-		// 			$: true,
-		// 			console: true
-		// 		}
-		// 	},
-		// 	'<%= pkg.name %>': {
-		// 		src: [ 'src/*.js' ]
-		// 	}
-		// },
- 
 		concat: {
 			dist: {
 				src: ['src/jquery.oaxlider.js'],
 				dest: 'jquery.oaxlider.min.js'
 			}
 		},
- 
 		uglify: {
 			options: {
 				stripBanners: true,
@@ -43,7 +18,6 @@ module.exports = function (grunt) {
 				dest: 'jquery.oaxlider.min.js'
 			}
 		},
- 
 		cssmin: {
 			with_banner: {
 				options: {
@@ -57,18 +31,16 @@ module.exports = function (grunt) {
 				}
 			}
 		},
- 
 		watch: {
 			scripts: {
 				files: ['src/*.js'],
-				tasks: [/* 'jshint', */ 'concat', 'removelogging', 'uglify']
+				tasks: ['concat', 'removelogging', 'uglify']
 			},
 			css: {
 				files: ['css/*.css'],
 				tasks: ['cssmin']
 			}
 		},
-
 		removelogging: {
 			dist: {
 				src: "oaxlider.min.js",
@@ -77,7 +49,6 @@ module.exports = function (grunt) {
 		}
 	});
 
-	// grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify-es');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -85,5 +56,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-remove-logging');
 	grunt.loadNpmTasks('grunt-daemon');
  
-	grunt.registerTask('default', [/* 'jshint',  */ 'concat', 'removelogging', 'uglify', 'cssmin', 'watch', 'daemonize']); //������ �� ���������, ������ grunt
+	grunt.registerTask('default', ['concat', 'removelogging', 'uglify', 'cssmin', 'watch', 'daemonize']);
 };
