@@ -1,4 +1,5 @@
-# oaxlider [![Travis Build Status](https://travis-ci.org/alkeeper/oaxlider.svg?branch=master)](https://travis-ci.org/alkeeper/oaxlider)
+# oaxlider
+<!-- [![Travis Build Status](https://travis-ci.org/alkeeper/oaxlider.svg?branch=master)](https://travis-ci.org/alkeeper/oaxlider) -->
 Oak slider js
 
 ### Basic usage
