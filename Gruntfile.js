@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 		watch: {
 			scripts: {
 				files: ['src/*.js'],
-				tasks: ['concat', 'removelogging', 'uglify']
+				tasks: ['babel', 'concat', 'removelogging', 'uglify']
 			},
 			css: {
 				files: ['css/*.css'],
@@ -68,5 +68,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-remove-logging');
 	// grunt.loadNpmTasks('grunt-daemon');
  
-	grunt.registerTask('default', ['concat', 'removelogging', 'babel', 'uglify', 'cssmin', 'watch' /* , 'daemonize' */]);
+	grunt.registerTask('default', ['concat', 'babel', 'removelogging', 'uglify', 'cssmin', 'watch' /* , 'daemonize' */]);
 };

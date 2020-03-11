@@ -59,13 +59,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       height: params.height
     };
     var i = 1,
-        s = 1,
-        zI = 1;
+        s = 1;
     slides.each(function () {
       $(this).attr("id", "slide-" + i);
 
       if (controlsRequired) {
-        controls.append($("<a id=\"ctrl-" + i + "\" href=\"javascript:void(0)\">" + i + "</a>"));
+        controls.append($("<a id=\"ctrl-".concat(i, "\" href=\"javascript:void(0)\">").concat(i, "</a>")));
       }
 
       i++;
@@ -151,9 +150,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
 
     if (controlsRequired) {
-      controls.find("a").each(function () {
-        $(this).click(function () {
-          return change($(this).text(), false, true);
+      controls.find("a").each(function (i, el) {
+        $(el).click(function () {
+          return change($(el).text(), false, true);
         });
       });
     }

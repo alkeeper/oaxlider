@@ -55,14 +55,12 @@
 			height	: params.height
 		};
 
-		let i = 1,
-			s = 1,
-			zI = 1;
+		let i = 1, s = 1;
 
 		slides.each(function(){
 			$(this).attr("id", "slide-" + i);
 			if(controlsRequired){
-				controls.append($("<a id=\"ctrl-" + i + "\" href=\"javascript:void(0)\">" + i + "</a>"));
+				controls.append($(`<a id="ctrl-${i}" href="javascript:void(0)">${i}</a>`));
 			}
 			i++;
 		});
@@ -145,17 +143,9 @@
 		};
 
 		if(controlsRequired){
-
-			controls.find("a").each(function(){
-
-				$(this).click(function(){
-
-					return change($(this).text(), false, true);
-
-				});
-
-			});
-
+			controls.find("a").each( (i, el) => {
+				$(el).click( () => change($(el).text(), false, true));
+			} );
 		}
 
 		const auto = () => {
