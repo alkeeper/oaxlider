@@ -7,6 +7,17 @@ module.exports = function (grunt) {
 				dest: 'jquery.oaxlider.min.js'
 			}
 		},
+		babel: {
+			options: {
+				sourceMap: true,
+				presets: ['@babel/preset-env']
+			},
+			dist: {
+				files: {
+					'src/jquery.oaxlider.js' : 'src/jquery.oaxlider.es6.js'
+				}
+			}
+		  },
 		uglify: {
 			options: {
 				stripBanners: true,
@@ -50,11 +61,12 @@ module.exports = function (grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-babel');
 	grunt.loadNpmTasks('grunt-contrib-uglify-es');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-remove-logging');
-	grunt.loadNpmTasks('grunt-daemon');
+	// grunt.loadNpmTasks('grunt-daemon');
  
-	grunt.registerTask('default', ['concat', 'removelogging', 'uglify', 'cssmin', 'watch', 'daemonize']);
+	grunt.registerTask('default', ['concat', 'removelogging', 'babel', 'uglify', 'cssmin', 'watch' /* , 'daemonize' */]);
 };

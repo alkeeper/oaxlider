@@ -1,6 +1,6 @@
 {
 	"name": "oaxlider",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"private": false,
 	"description": "An ultra-light jQuery plugin that slides your photos.",
 	"main": "src/jquery.oaxlider.js",
@@ -26,7 +26,10 @@
 		"url": "https://github.com/alkeeper/oaxlider/issues"
 	},
 	"dependencies": {
+		"@babel/core": "^7.8.7",
+		"@babel/preset-env": "^7.8.7",
 		"grunt": "^1.0.4",
+		"grunt-babel": "^8.0.0",
 		"grunt-contrib-concat": "^1.0.1",
 		"grunt-contrib-cssmin": "^3.0.0",
 		"grunt-contrib-uglify-es": "^3.3.0",
